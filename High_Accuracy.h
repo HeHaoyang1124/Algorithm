@@ -17,5 +17,7 @@ public:
 
     void Print_Num();
 
-    High_Accuracy add(High_Accuracy another);
+    High_Accuracy Sum(High_Accuracy another);
+    High_Accuracy multiply(High_Accuracy another);
+
 };
