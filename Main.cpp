@@ -2,13 +2,12 @@
 
 int main()
 {
+    High_Accuracy h1(57899);
+    High_Accuracy h3(321);
+    High_Accuracy h2;
+    h2 = h1.Subtraction(h3);
 
-    High_Accuracy h1((char *)"532");
-    High_Accuracy h2((char *)"918");
-
-    High_Accuracy h3 = h1.Multiply(h2);
-
-    h3.Print_Num();
+    h2.Print_Num();
     printf("\n");
 
     std::cin.get();
