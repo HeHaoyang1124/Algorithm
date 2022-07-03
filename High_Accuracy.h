@@ -18,6 +18,6 @@ public:
     void Print_Num();
 
     High_Accuracy Sum(High_Accuracy another);
-    High_Accuracy multiply(High_Accuracy another);
+    High_Accuracy Multiply(High_Accuracy another);
 
 };

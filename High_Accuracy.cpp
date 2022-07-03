@@ -1,13 +1,9 @@
 #include "High_Accuracy.h"
 
-
 High_Accuracy::High_Accuracy() : m_length(0)
 {
     memset(m_bit, 0, sizeof(m_bit));
 }
-
-
-
 
 High_Accuracy::High_Accuracy(char *s)
 {
@@ -17,10 +13,6 @@ High_Accuracy::High_Accuracy(char *s)
         m_bit[i] = s[m_length - i] - '0';
     }
 }
-
-
-
-
 
 void High_Accuracy::Input_Num()
 {
@@ -33,9 +25,6 @@ void High_Accuracy::Input_Num()
     }
 }
 
-
-
-
 void High_Accuracy::Print_Num()
 {
     for (int i = m_length; i > 0; i--)
@@ -43,9 +32,6 @@ void High_Accuracy::Print_Num()
         printf("%d", m_bit[i]);
     }
 }
-
-
-
 
 High_Accuracy High_Accuracy::Sum(High_Accuracy another)
 {
@@ -69,9 +55,25 @@ High_Accuracy High_Accuracy::Sum(High_Accuracy another)
     return a;
 }
 
-
-
-High_Accuracy multiply(High_Accuracy another)
+High_Accuracy High_Accuracy::Multiply(High_Accuracy another)
 {
-    
+    High_Accuracy a;
+
+    a.m_length = this->m_length + another.m_length;
+
+    for (int i = 1; i <= this->m_length; i++)
+    {
+        for (int j = 1; j <= another.m_length; j++)
+        {
+            a.m_bit[i + j - 1] += (this->m_bit[i] * another.m_bit[j]);
+            // carrying
+            a.m_bit[i + j] += a.m_bit[i + j - 1] / 10;
+            a.m_bit[i + j - 1] %= 10;
+        }
+    }
+    if (a.m_bit[a.m_length] == 0)
+    {
+        a.m_length--;
+    }
+    return a;
 }
