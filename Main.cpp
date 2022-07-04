@@ -1,14 +1,25 @@
-#include "High_Accuracy.h"
+#include "Sort\Sort.h"
+#include <iostream>
+#include <chrono>
+#include <thread>
+
+
+
+
+long long arr[20000];
 
 int main()
-{
-    High_Accuracy h1(57899);
-    High_Accuracy h2(321);
-    High_Accuracy h3;
-    h3 = h1.Division(h2);
-    h3.Print_Num();
-    printf("\n");
+{	
+	
+	
 
-    std::cin.get();
-    return 0;
+
+	
+	generates(arr, 20000);
+
+	Selection_Sort(arr, 20000, true);
+
+	printf("\n");
+
+	return 0;
 }
