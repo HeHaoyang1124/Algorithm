@@ -1,25 +1,21 @@
 #include "Sort\Sort.h"
-#include <iostream>
 #include <chrono>
+#include <iostream>
 #include <thread>
+constexpr auto MAX = 20000;
 
+long long arr[MAX];
 
+int main() {
 
+  generates(arr, MAX);
+  Old_Bubble_Sort(arr, MAX, true);
+  Bubble_Sort(arr, MAX, true);
+  for (int i = 0; i < MAX; i++) {
+    std::cout << arr[i] << "\t";
+  }
 
-long long arr[20000];
+  std::cin.get();
 
-int main()
-{	
-	
-	
-
-
-	
-	generates(arr, 20000);
-
-	Selection_Sort(arr, 20000, true);
-
-	printf("\n");
-
-	return 0;
+  return 0;
 }
