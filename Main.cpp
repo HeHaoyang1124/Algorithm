@@ -1,21 +1,29 @@
-#include "Sort\Sort.h"
-#include <chrono>
 #include <iostream>
-#include <thread>
-constexpr auto MAX = 20000;
+#include <vector>
+#include <algorithm>
+#include <cstdio>
+#define MAXN int(2e5+5)
+template <typename ty>
+inline void read(ty& k) {
+	char c = getchar();
+	while (c < '0' || c>'9') c = getchar();
+	for (k = 0; c >= '0' && c <= '9'; c = getchar()) k = k * 10 + c - '0';
+}
 
-long long arr[MAX];
+
 
 int main() {
-
-  generates(arr, MAX);
-  Old_Bubble_Sort(arr, MAX, true);
-  Bubble_Sort(arr, MAX, true);
-  for (int i = 0; i < MAX; i++) {
-    std::cout << arr[i] << "\t";
-  }
-
-  std::cin.get();
-
-  return 0;
+	int n, q;
+	read(n);
+	std::vector<int> a(n);
+	for(auto & ai : a) read(ai);
+	
+	for(auto & ai : a) {
+		
+	}
+	read(q);
+	while(q--) {
+			
+	}
+	return 0;
 }
